@@ -1,0 +1,13 @@
+{% extends 'base.html.twig'%}
+
+{% block main %}
+    <article>
+        {% for author in authors %}
+           {% include'admin/author.html.twig' %}
+
+            <a href="{{ path('admin_update_author', {'id':author.id}) }}">Modifier author</a>
+            <a href="{{ path('admin_delete_author', {'id':author.id}) }}">Supprimer author</a>
+
+        {% endfor %}
+    </article>
+{% endblock %}

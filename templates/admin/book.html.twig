@@ -1,0 +1,18 @@
+
+{% block main %}
+    <article>
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <h3>{{ book.title }} </h3>
+            <p>{{ book.nbPages }}</p>
+            <p>{{ book.publishedAt |date('Y-m-d')}}</p>
+            <a class="uk-button uk-button-default" href="{{ path('admin_show_author',{'id':book.author.id}) }}"><p>{{ book.author.lastName }}</p></a>
+            <a class="uk-button uk-button-default" href="{{ path('admin_delete_book', {'id':book.id}) }}">Supprimer book</a>
+            <a class="uk-button uk-button-default" href="{{ path('admin_update_book', {'id':book.id}) }}">Modifier book</a>
+
+
+        </div>
+
+
+
+    </article>
+{% endblock %}

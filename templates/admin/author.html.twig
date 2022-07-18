@@ -1,0 +1,16 @@
+
+
+{% block main %}
+    <article>
+
+        <p>{{ author.firstName }} {{ author.lastName }}</p>
+        <p> {{ author.birthDate|date('Y-m-d') }}</p>
+        <p>{{ author.deathDate |date('Y-m-d') }}</p>
+
+
+        {% for book in author.books %}
+         <a href="{{ path('admin_show_book', {'id':book.id}) }}"><p>{{ book.title }}</p></a>
+        {% endfor %}
+    </article>
+
+{% endblock %}
