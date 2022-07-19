@@ -4,6 +4,7 @@
     <article>
         {% for book in books %}
             {% include'admin/book.html.twig' %}
+            <img class="article-img" src="{{ asset('uploads/images/'~ book.image ) }}" alt="{{ book.title }}">
         {% endfor %}
     </article>
 {% endblock %}

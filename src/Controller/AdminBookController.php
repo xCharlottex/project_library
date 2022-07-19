@@ -19,6 +19,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AdminBookController extends AbstractController {
 
@@ -55,13 +56,35 @@ class AdminBookController extends AbstractController {
     /**
      * @Route("/admin/insert_book", name="admin_insert_book")
      */
-    public function insertBook(EntityManagerInterface $entityManager, Request $request){
+    public function insertBook(EntityManagerInterface $entityManager, Request $request, SluggerInterface $slugger){
         $book = new Book();
 
         $form = $this->createForm(BookType::class, $book);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+
+            // je recupere l'image dans le formulaire l'image est en mapped false donc c'est a moi de gerer l'upload
+            $image= $form->get('image')->getData();
+
+            // je recupere le nom du fichier original
+            $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+
+            // j'utilise une instance de la classe Slugger et sa methode slug pour supprimer les caracteres
+            // spéciaux, espaces etc du nom du fichier
+            $safeFilename = $slugger->slug($originalFilename);
+
+            // je rajoute au nom de l'image, un identifiant unique ( au cas ou l'image soit uploadée plusieurs fois
+            $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
+
+            // je deplace l'image dans le dossier public et je la renomme avec le nouveau nom créé
+            $image->move(
+                $this->getParameter('images_directory'),
+                $newFilename
+            );
+            $book->setImage($newFilename);
+
+
             $entityManager->persist($book);
             $entityManager->flush();
         }
@@ -75,12 +98,33 @@ class AdminBookController extends AbstractController {
     /**
      * @Route("/admin/book/update/{id}", name="admin_update_book")
      */
-    public function updateBook($id, BookRepository $bookRepository,EntityManagerInterface $entityManager, Request $request){
+    public function updateBook($id, BookRepository $bookRepository,EntityManagerInterface $entityManager, Request $request, SluggerInterface $slugger){
         $book = $bookRepository->find($id);
 
         $form = $this->createForm(BookType::class, $book);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
+
+
+            // je recupere l'image dans le formulaire l'image est en mapped false donc c'est a moi de gerer l'upload
+            $image= $form->get('image')->getData();
+
+            // je recupere le nom du fichier original
+            $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+
+            // j'utilise une instance de la classe Slugger et sa methode slug pour supprimer les caracteres
+            // spéciaux, espaces etc du nom du fichier
+            $safeFilename = $slugger->slug($originalFilename);
+
+            // je rajoute au nom de l'image, un identifiant unique ( au cas ou l'image soit uploadée plusieurs fois
+            $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
+
+            // je deplace l'image dans le dossier public et je la renomme avec le nouveau nom créé
+            $image->move(
+                $this->getParameter('images_directory'),
+                $newFilename
+            );
+            $book->setImage($newFilename);
 
             $entityManager->persist($book);
             $entityManager->flush();

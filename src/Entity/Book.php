@@ -46,6 +46,26 @@ class Book {
      */
     private $nbPages;
 
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @ORM\Column (type="string")
+     */
+    private $image;
 
     public function getId(): ?int
     {
