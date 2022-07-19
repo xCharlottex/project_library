@@ -1,30 +1,30 @@
-
-.lien a{
-    color: #C8BFF5 ;
+.lien a {
+  color: #C8BFF5;
 }
 
-
-.lien li{
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    display: inline-block;
-    justify-content: space-around;
+.lien li {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  display: inline-block;
+  justify-content: space-around;
 }
 
 html {
-    background-color: #FFB7B3;
+  background-color: #FFB7B3;
 }
 
 nav a {
-    color: pink;
-    margin-left: 100px;
+  color: pink;
+  margin-left: 100px;
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-.article-img{
-    width: 100%;
+.article-img {
+  width: 100%;
 }
+
+/*# sourceMappingURL=style.css.map */
