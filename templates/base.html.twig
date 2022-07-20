@@ -27,8 +27,10 @@
                     <div> <a href="{{ path('admin_insert_book' ) }}">Creer book</a></div>
                     <div> <a href="{{ path('admin_insert_author' ) }}">Creer author</a></div>
                     <div> <a href="{{ path('admin_home' ) }}">Home</a></div>
-
+                    <div> <a href="{{ path('app_login') }}" >Connexion</a></div>
+                    <div> <a href="{{ path('app_logout') }}" >Déconnexion</a></div>
                 </div>
+
 
                 <div class="uk-navbar-item">
                     <form role="search" method="get"
@@ -36,6 +38,7 @@
                         <input class="uk-input uk-form-width-small" type="text" placeholder="...." name="search">
                         <button class="uk-button uk-button-default" type="submit">Rechercher</button>
                     </form>
+
                 </div>
 
             </div>
