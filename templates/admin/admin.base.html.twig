@@ -22,20 +22,16 @@
                 </ul>
 
                 <div class="uk-navbar-item">
-                    <div> <a href="{{ path('books' ) }}">Liste des books</a></div>
-                    <div> <a href="{{ path('authors' ) }}">Liste des authors</a></div>
-                    <div> <a href="{{ path('home' ) }}">Home</a></div>
+                    <p>Hello {{ app.user.email }}</p>
+                    <div> <a href="{{ path('admin_books' ) }}">Liste des books</a></div>
+                    <div> <a href="{{ path('admin_authors' ) }}">Liste des authors</a></div>
+                    <div> <a href="{{ path('admin_insert_book' ) }}">Creer book</a></div>
+                    <div> <a href="{{ path('admin_insert_author' ) }}">Creer author</a></div>
+                    <div> <a href="{{ path('admin_home' ) }}">Home</a></div>
+
+                    <div> <a href="{{ path('app_logout') }}" >Déconnexion</a></div>
                 </div>
 
-
-                <div class="uk-navbar-item">
-                    <form role="search" method="get"
-                    action="{{ path('search_books') }}">
-                        <input class="uk-input uk-form-width-small" type="text" placeholder="...." name="search">
-                        <button class="uk-button uk-button-default" type="submit">Rechercher</button>
-                    </form>
-
-                </div>
 
             </div>
         </nav>
@@ -45,12 +41,12 @@
 
     {% endblock %}
     {% block main %}
-    <title>Page d'Accueil</title>
+        <title>Page d'Accueil</title>
         <div class="uk-align-center">
-        <h1 class="bienvenue">Bienvenue</h1>
+            <h1 class="bienvenue">Bienvenue</h1>
             <h2 class="site"> sur mon petit site</h2>
         </div>
-            {% endblock %}
+    {% endblock %}
 </head>
 <body>
 

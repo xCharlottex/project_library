@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <article>
+        {% for author in authors %}
+           {% include'front/author.html.twig' %}
+
+        {% endfor %}
+    </article>
+{% endblock %}

@@ -8,7 +8,7 @@
 
 
         {% for book in author.books %}
-         <a href="{{ path('admin_show_book', {'id':book.id}) }}"><p>{{ book.title }}</p></a>
+         <a href="{{ path('show_book', {'id':book.id}) }}"><p>{{ book.title }}</p></a>
         {% endfor %}
     </article>
 
