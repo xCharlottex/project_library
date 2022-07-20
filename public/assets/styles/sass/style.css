@@ -2,16 +2,19 @@
   color: #C8BFF5;
 }
 
-.lien li {
+/* Nesting */
+ul {
+  list-style-type: none;
+}
+ul .lien li {
   display: flex;
+}
+
+.lien li {
   align-items: center;
   list-style-type: none;
   display: inline-block;
   justify-content: space-around;
-}
-
-html {
-  background-color: #FFB7B3;
 }
 
 nav a {
@@ -19,12 +22,19 @@ nav a {
   margin-left: 100px;
 }
 
-h1 {
+.site {
+  background: orange;
   text-align: center;
+  color: #FFB7B3;
 }
 
-.article-img {
-  width: 100%;
+html {
+  background-color: #FFB7B3;
+}
+
+/* extends */
+.bienvenue {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

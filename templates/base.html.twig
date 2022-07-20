@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/css/uikit.min.css" />
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/css/style.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/js/uikit-icons.min.js"></script>
 
@@ -48,7 +48,8 @@
     {% block main %}
     <title>Page d'Accueil</title>
         <div class="uk-align-center">
-        <h1>Bienvenue</h1>
+        <h1 class="bienvenue">Bienvenue</h1>
+            <h2 class="site"> sur mon petit site</h2>
         </div>
             {% endblock %}
 </head>

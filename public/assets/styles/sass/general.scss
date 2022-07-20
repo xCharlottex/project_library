@@ -1,0 +1,14 @@
+$primarycolor: #FFB7B3;
+
+html {
+  background-color: $primarycolor;
+}
+
+/* extends */
+
+%centrer {
+  text-align: center;
+}
+.bienvenue {
+  @extend %centrer;
+}

@@ -1,0 +1,11 @@
+
+@mixin theme ($theme: orange) {
+  background: $theme;
+  text-align: center;
+  color: #FFB7B3;
+}
+
+.site {
+  @include theme;
+
+}
