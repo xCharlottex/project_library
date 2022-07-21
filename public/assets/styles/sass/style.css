@@ -19,13 +19,7 @@ ul .lien li {
 
 nav a {
   color: pink;
-  margin-left: 100px;
-}
-
-.site {
-  background: orange;
-  text-align: center;
-  color: #FFB7B3;
+  margin-left: 10px;
 }
 
 html {

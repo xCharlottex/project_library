@@ -1,25 +1,46 @@
+.nightjs html {
+  background-color: #EFE994;
+}
+
+.nightjs a {
+  color: aquamarine;
+  background-color: #5eb5e0;
+}
+
+.nightjs {
+  background-color: aquamarine;
+}
+
 .lien a {
   color: #C8BFF5;
 }
 
-.lien li {
+/* Nesting */
+ul {
+  list-style-type: none;
+}
+ul .lien li {
   display: flex;
+}
+
+.lien li {
   align-items: center;
   list-style-type: none;
   display: inline-block;
   justify-content: space-around;
 }
 
+nav a {
+  color: pink;
+  margin-left: 10px;
+}
+
 html {
   background-color: #FFB7B3;
 }
 
-nav a {
-  color: pink;
-  margin-left: 100px;
-}
-
-h1 {
+/* extends */
+.bienvenue {
   text-align: center;
 }
 

@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "sass": "^1.53.0"
+  },
+  "name": "project_library",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "sass -w assets/styles/sass:assets/style/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xCharlottex/project_library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xCharlottex/project_library/issues"
+  },
+  "homepage": "https://github.com/xCharlottex/project_library#readme",
+  "description": ""
+}
